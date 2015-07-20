@@ -1,0 +1,26 @@
+using UnityEngine;
+using System.Collections;
+
+public class FXN : MonoBehaviour 
+{
+	int a = 0;
+	void SetAToThree ()
+	{
+		a = 3;
+	}
+
+	// Use this for initialization
+	void Start () 
+	{
+		Debug.Log (a);
+		SetAToThree ();
+		Debug.Log (a);
+	
+	}
+	
+	// Update is called once per frame
+	void Update () 
+	{
+	
+	}
+}
