@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FXN : MonoBehaviour 
 {
-	int a = 0;
+	int a = 2;
 	void SetAToThree ()
 	{
 		a = 3;
