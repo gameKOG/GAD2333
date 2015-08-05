@@ -1,0 +1,27 @@
+using UnityEngine;
+using System.Collections;
+
+public class Light_L : MonoBehaviour 
+{
+	public void ChangeColor()
+	{
+		//print ("You got one!");
+		gameObject.GetComponent<Renderer> ().material.color = new Color (1,1,0,0);
+	}
+
+	public void KillColor()
+	{
+		gameObject.GetComponent<Renderer> ().material.color = new Color (0.5f,0.5f,0.5f);
+	}
+	// Use this for initialization
+	void Start () 
+	{
+	
+	}
+	
+	// Update is called once per frame
+	void Update () 
+	{
+	
+	}
+}
