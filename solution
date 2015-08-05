@@ -1,0 +1,76 @@
+using UnityEngine;
+using System.Collections;
+
+public class Solution : MonoBehaviour 
+{
+	public Light_L other1;
+	public Light_C other2;
+	public Light_R other3;
+
+	public GameObject chosen01;
+	public GameObject chosen02;
+	public GameObject chosen03;
+
+	public GameObject lightLeft;
+	public GameObject lightCent;
+	public GameObject lightRight;
+
+	public Vector3 answer01;
+	public Vector3 answer02;
+	public Vector3 answer03;
+	
+	void Start () 
+	{
+		chosen01 = GameObject.Find ("Plane_Left"+ Random.Range (1,4));
+		Transform chosen01Transform = chosen01.transform;
+		//gets position
+		Vector3 chosPos01 = chosen01Transform.position;
+		answer01 = chosPos01;
+		print ("Answer01 is at " + chosPos01);
+
+		chosen02 = GameObject.Find ("Plane_Cent"+ Random.Range (1,4));
+		Transform chosen02Transform = chosen02.transform;
+		//gets position
+		Vector3 chosPos02 = chosen02Transform.position;
+		answer02 = chosPos02;
+		print ("Answer02 is at " + chosPos02);
+	
+		chosen03 = GameObject.Find ("Plane_Right"+ Random.Range (1,4));
+		Transform chosen03Transform = chosen03.transform;
+		//gets position
+		Vector3 chosPos03 = chosen03Transform.position;
+		answer03 = chosPos03;
+		print ("Answer03 is at " + chosPos03);
+	}
+	
+	// Update is called once per frame
+	void Update () 
+	{
+		GameObject markLeft = GameObject.Find ("Mark_L");
+		Transform markLeftTransform = markLeft.transform;
+		//gets position
+		Vector3 leftPosition = markLeftTransform.position;
+		if (leftPosition == answer01)
+			other1.ChangeColor();
+		else other1.KillColor();
+			//print ("You got one!");
+
+		GameObject markCenter = GameObject.Find ("Mark_C");
+		Transform markCenterTransform = markCenter.transform;
+		//gets position
+		Vector3 centerPosition = markCenterTransform.position;
+		if (centerPosition == answer02)
+			other2.ChangeColor();
+		else other2.KillColor();
+			//print ("You got two!");
+
+		GameObject markRight = GameObject.Find ("Mark_R");
+		Transform markRightTransform = markRight.transform;
+		//gets position
+		Vector3 rightPosition = markRightTransform.position;
+		if (rightPosition == answer03)
+			other3.ChangeColor();
+		else other3.KillColor();
+			//print ("You got three!");
+	}
+}
